@@ -4,7 +4,7 @@
 	"title":"Главная"
 	})
 	<body>
-		<div class="wrapper">
+		<div class="main-wrapper">
 			@@include('html/_header.htm',{})
 			<main class="page">
 				<section class="card">
@@ -106,14 +106,14 @@
                   <input type="number" class="to-cart__quantity-value">
                   <button class="decrement" type="button">-</button>
                 </div>
-                <a href="#" data-popup="#popup" class="to-cart__add">Добавить в корзину</a>
-                <button class="to-cart__favorite" type="button">
+                <a href="#popup-add" class="to-cart__add popup-link">Добавить в корзину</a>
+                <a href="#popup-fav" class="to-cart__favorite popup-link" >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="none">
                     <path d="M7.90002 3.0948C6.69981 -2.52108 -2.59119 1.90389 1.76037 7.60175C6.11193 13.2996 8.40002 15.4908 8.40002 15.4908" stroke="#fff"/>
                     <path d="M7.89415 3.0948C9.09435 -2.52108 18.7304 1.90389 14.3789 7.60175C10.0273 13.2996 7.70001 15.5 7.70001 15.5" stroke="#fff"/>
                     <path d="M7.39099 2.70752L8.4043 2.70757L8.38337 3.24079H7.39099V2.70752Z" fill="none"/>
                     </svg>
-                </button>
+                  </a>
               </div>
               <a href="#" class="to-cart__one-click-buy">
                 Купить в 1 клик
@@ -299,9 +299,43 @@
           </div>
         </section>
 			</main>
-			@@include('html/_footer.htm',{})
+			@@include('html/_footer.htm',{})     
 		</div>
-		@@include('html/_popup.htm',{})
+    <div id="popup-add" class="popup">
+      <div class="popup__body">
+        <div class="popup__content">
+          <button type="button" class="close-popup"></button>
+          <div class="popup__product-name">
+            Наименование товара:
+          </div>
+          <div class="popup__quantity">
+            0
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popup-fav" class="popup">
+      <div class="popup__body">
+        <div class="popup__content">
+          <button type="button" class="close-popup"></button>
+          <span class="popup__product-name">
+            Наименование товара
+          </span>
+          <span class="popup__add-to-favorite">добавлен(а) в избранное.</span>
+        </div>
+      </div>
+    </div>
+    <div id="popup-err" class="popup">
+      <div class="popup__body">
+        <div class="popup__content">
+          <button type="button" class="close-popup"></button>
+          <div class="mail-error">
+            Введите правильный адрес электронной почты
+          </div>
+        </div>
+      </div>
+    </div>
+
 		@@include('html/_js.htm',{})
 
 	</body>

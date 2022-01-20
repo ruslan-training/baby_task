@@ -65,8 +65,7 @@ flsFunctions.menuInit();
 Документация по работе в шаблоне:
 Сниппет (HTML): pl
 */
-flsFunctions.initPopups();
-
+// flsFunctions.initPopups();
 /*
 Модуль параллакса мышью
 Документация по работе в шаблоне:

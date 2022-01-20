@@ -315,6 +315,9 @@ input[type="number"]:focus {
             background-color: lighten($mainColor, 10%);
             transition: all 0.3s ease 0s;
         }
+        &:focus .to-cart__favorite svg {
+            fill: $mainWhite;
+        }
     }
     &__favorite svg {
         width: 100%;
@@ -732,24 +735,31 @@ input[type="number"]:focus {
     }
 }
 //=========================POPUP===================================================================
+
 .popup {
-    .popup-show & {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0, 0.8);
-        top: 0;
-        left: 0;
-        z-index: 5;
-    }
-   
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.6);
+    top: 0;
+    left: 0;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.8s ease 0s;
 }
-.popup__wrapper {
-    min-height: 100vh;
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+.popup__body {
+    min-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2em 1em;
+    padding: 30px 10px;
 }
 .popup__content {
     display: flex;
@@ -758,17 +768,45 @@ input[type="number"]:focus {
     column-gap: 30px;
     position: relative;
     background-color: $mainWhite;
+    color: $mainBlack;
     max-width: 800px;
     width: 100%;
-    color: $mainBlack;
     padding: 30px;
+    opacity: 0;
+    transform: perspective(600px) translate(0px, -200%) rotateX(45deg);
+    transition: all 0.8s ease 0s;
+}
+.popup.open .popup__content {
+    transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+    opacity: 1;
 }
 .popup__product-name, .popup__quantity {
     font-size: rem(32);
 }
-.popup__close {
+.close-popup {
     position: absolute;
-    right: 10px;
-    top: 10px;
-    z-index: 6;
+    right: 0;
+    top: 0;
+
+    width: 30px;
+    height: 30px;
+
+
+    &:after, &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%, -50%);
+
+        width: 15px;
+        height: 1px;
+        background-color: $mainColor;
+    }
+    &:after {
+        transform: translateX(-50%) rotate(135deg);
+    }
+    &:before {
+        transform: translateX(-50%) rotate(-135deg);
+    }
 }
