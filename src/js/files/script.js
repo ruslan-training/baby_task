@@ -63,6 +63,11 @@ const current = document.querySelector('#current'),
 			}
 		}
 	})
+	footerForm.addEventListener('blur', e => {
+		const hasValid = ~e.target.value.indexOf('@') !== 0
+		console.log(hasValid);
+		!hasValid ? footerForm.classList.add('_error') : footerForm.classList.remove('_error')
+	})
 	//===========================HEADER=MOVED====================================================================================================================================================================================================================================================================================
 	
 	let lastScrollTop = 0,

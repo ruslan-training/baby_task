@@ -99,6 +99,10 @@
             &:focus, &:active {
                 outline: none;
         }
+
+        &._error {
+            border-bottom: 1px solid red;
+        }
     }
     &__input-button {
         position: absolute;
