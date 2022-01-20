@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Главная"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="card">
+					<div class="card__container">
+						<div class="card__thumb-wrapper">
+              <div class="card__thumb-img-main">
+                <img src="@img/card__01.png" id="current">
+              </div>
+            
+              <div class="card__thumb-gallery">
+                <img src="@img/card__01.png">
+                <img src="@img/card__02.png">
+                <img src="@img/card__03.png">
+                <img src="@img/card__04.png">
+                <img src="@img/card__05.png">
+              </div>
+						</div>
+            <div class="card__wrapper">
+              <div class="card__details details">
+                <h4 id="product-name" class="details__title">Пижама для девочек</h4>
+                <div class="details__vendor-code">Арт. 02765/46</div>
+                <div class="details__star-rating star-rating">
+                  <div class="star-rating__title">Отзывы</div>
+                  <ul class="star-rating__stars-box">
+                    <li class="star-rating__star">
+                      <a href="#" class="star-rating__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                          <path d="M6 8.635L9.09 10.5L8.27 6.985L11 4.62L7.405 4.315L6 1L4.595 4.315L1 4.62L3.73 6.985L2.91 10.5L6 8.635Z" fill="#333333"/>
+                          </svg>
+                      </a>
+                    </li>
+                    <li class="star-rating__star">
+                      <a href="#" class="star-rating__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                          <path d="M6 8.635L9.09 10.5L8.27 6.985L11 4.62L7.405 4.315L6 1L4.595 4.315L1 4.62L3.73 6.985L2.91 10.5L6 8.635Z" fill="#333333"/>
+                          </svg>
+                      </a>
+                    </li>
+                    <li class="star-rating__star">
+                      <a href="#" class="star-rating__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                          <path d="M6 8.635L9.09 10.5L8.27 6.985L11 4.62L7.405 4.315L6 1L4.595 4.315L1 4.62L3.73 6.985L2.91 10.5L6 8.635Z" fill="#333333"/>
+                          </svg>
+                      </a>
+                    </li>
+                    <li class="star-rating__star">
+                      <a href="#" class="star-rating__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                          <path d="M6 8.635L9.09 10.5L8.27 6.985L11 4.62L7.405 4.315L6 1L4.595 4.315L1 4.62L3.73 6.985L2.91 10.5L6 8.635Z" fill="#333333"/>
+                          </svg>
+                      </a>
+                    </li>
+                    <li class="star-rating__star">
+                      <a href="#" class="star-rating__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                          <path d="M6 8.635L9.09 10.5L8.27 6.985L11 4.62L7.405 4.315L6 1L4.595 4.315L1 4.62L3.73 6.985L2.91 10.5L6 8.635Z" fill="#333333"/>
+                          </svg>
+                      </a>
+                    </li>
+                  </ul>
+                  <a href="#" class="star-rating__reviews">
+                    14 отзывов
+                  </a>
+                  <button type="submit" class="star-rating__button btn-right">
+                    <img src="@img/icons/arrow_right.svg" alt="">
+                  </button>
+                </div>
+                <div class="details__price-box price-box">
+                  <div class="price-box__discount-price">800 ₽</div>
+                  <div class="price-box__price">1 500 ₽</div>
+                  <button type="submit" class="price-box__button btn-right">
+                    <img src="@img/icons/arrow_right.svg" alt="">
+                  </button>
+                </div>
+                <div class="details__sale sale">
+                  <div class="sale__banner">скидка -36%</div>
+                  <div class="sale__banner">акция -20%</div>
+                </div>
+              </div>
+              <div class="card__to-cart to-cart">
+              <form action="post" method="" class="to-cart__form">
+                <div class="to-cart__dropdown dropdown">
+                  <input type="text" placeholder="Выбрать размер" class="dropdown__input">
+                  <div class="dropdown__option">
+                    <div class="dropdown__item">Выбрать размер</div>
+                    <div class="dropdown__item">XS</div>
+                    <div class="dropdown__item">S</div>
+                    <div class="dropdown__item" >M</div>
+                    <div class="dropdown__item" >L</div>
+                  </div>  
+                </div>
+              </form>
+              <a href="" class="to-cart__size-table">
+                Определить размер
+              </a>
+              <div class="to-cart__quantity-box">
+                <div class="to-cart__calculation">
+                  <button class="increment" type="button">+</button>
+                  <input type="number" class="to-cart__quantity-value">
+                  <button class="decrement" type="button">-</button>
+                </div>
+                <a href="#" data-popup="#popup" class="to-cart__add">Добавить в корзину</a>
+                <button class="to-cart__favorite" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="none">
+                    <path d="M7.90002 3.0948C6.69981 -2.52108 -2.59119 1.90389 1.76037 7.60175C6.11193 13.2996 8.40002 15.4908 8.40002 15.4908" stroke="#fff"/>
+                    <path d="M7.89415 3.0948C9.09435 -2.52108 18.7304 1.90389 14.3789 7.60175C10.0273 13.2996 7.70001 15.5 7.70001 15.5" stroke="#fff"/>
+                    <path d="M7.39099 2.70752L8.4043 2.70757L8.38337 3.24079H7.39099V2.70752Z" fill="none"/>
+                    </svg>
+                </button>
+              </div>
+              <a href="#" class="to-cart__one-click-buy">
+                Купить в 1 клик
+              </a>
+              <hr class="to-cart__line">
+              </div>
+              <div class="card__desc descr">
+                <ul class="descr__list">
+                  <li class="descr__item">
+                    <a href="#" class="descr__link">Описание товара</a> 
+                  </li>
+                  <li class="descr__item">
+                    <a href="#" class="descr__link">Доставка и возврат</a> 
+                  </li>
+                  <li class="descr__item">
+                    <a href="#" class="descr__link">Способы оплаты</a> 
+                  </li>
+                </ul>
+              </div>
+            </div>
+					</div>
+				</section>
+        <section class="gallery">
+          <div class="gallery__container">
+            <a href="#" class="gallery__title">Посмотреть все стили</a>
+            <div class="gallery__body">
+              <div class="gallery__item _big">
+                <a href="" class="gallery__link">
+                  <img src="@img/01.png" alt="">
+                </a>
+                <div class="gallery__blackout-mask">
+                  <button class="gallery__button copy">
+                    <img src="@img/icons/copy.svg" alt="">
+                  </button>
+                  <div class="gallery__shop-link">
+                    <div class="gallery__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <path d="M1.25468 7.56595C1.13958 6.11201 2.2884 4.86865 3.74689 4.86865H12.2531C13.7116 4.86865 14.8604 6.11201 14.7453 7.56595L14.2203 14.1975C14.1174 15.4977 13.0323 16.5002 11.7281 16.5002H4.27189C2.96769 16.5002 1.88261 15.4977 1.77968 14.1975L1.25468 7.56595Z" stroke="#fff"/>
+                        <path d="M3.99999 9.5C3.99999 9.5 3.78329 1 8.00001 1C12.2167 1 12 9.5 12 9.5" stroke="#fff"/>
+                        </svg>
+                    </div>
+                    <div class="gallery__on-me">
+                      Узнай, что на мне
+                    </div>
+                  </div>
+                  <div class="gallery__liked">
+                    <a href="#" class="gallery__favorite-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="none">
+                        <path d="M7.90002 3.0948C6.69981 -2.52108 -2.59119 1.90389 1.76037 7.60175C6.11193 13.2996 8.40002 15.4908 8.40002 15.4908" stroke="#fff"/>
+                        <path d="M7.89415 3.0948C9.09435 -2.52108 18.7304 1.90389 14.3789 7.60175C10.0273 13.2996 7.70001 15.5 7.70001 15.5" stroke="#fff"/>
+                        <path d="M7.39099 2.70752L8.4043 2.70757L8.38337 3.24079H7.39099V2.70752Z" fill="none"/>
+                      </svg>
+                    </a>
+                    <a href="#" class="gallery__like-value">200</a>
+                  </div>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <a href="" class="gallery__link">
+                  <img src="@img/02.png" alt="">
+                </a>
+                <div class="gallery__blackout-mask">
+                  <button class="gallery__button copy">
+                    <img src="@img/icons/copy.svg" alt="">
+                  </button>
+                  <div class="gallery__shop-link">
+                    <div class="gallery__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <path d="M1.25468 7.56595C1.13958 6.11201 2.2884 4.86865 3.74689 4.86865H12.2531C13.7116 4.86865 14.8604 6.11201 14.7453 7.56595L14.2203 14.1975C14.1174 15.4977 13.0323 16.5002 11.7281 16.5002H4.27189C2.96769 16.5002 1.88261 15.4977 1.77968 14.1975L1.25468 7.56595Z" stroke="#fff"/>
+                        <path d="M3.99999 9.5C3.99999 9.5 3.78329 1 8.00001 1C12.2167 1 12 9.5 12 9.5" stroke="#fff"/>
+                        </svg>
+                    </div>
+                    <div class="gallery__on-me">
+                      Узнай, что на мне
+                    </div>
+                  </div>
+                  <div class="gallery__liked">
+                    <a href="#" class="gallery__favorite-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="none">
+                        <path d="M7.90002 3.0948C6.69981 -2.52108 -2.59119 1.90389 1.76037 7.60175C6.11193 13.2996 8.40002 15.4908 8.40002 15.4908" stroke="#fff"/>
+                        <path d="M7.89415 3.0948C9.09435 -2.52108 18.7304 1.90389 14.3789 7.60175C10.0273 13.2996 7.70001 15.5 7.70001 15.5" stroke="#fff"/>
+                        <path d="M7.39099 2.70752L8.4043 2.70757L8.38337 3.24079H7.39099V2.70752Z" fill="none"/>
+                      </svg>
+                    </a>
+                    <a href="#" class="gallery__like-value">200</a>
+                  </div>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <a href="" class="gallery__link">
+                  <img src="@img/03.png" alt="">
+                </a>
+                <div class="gallery__blackout-mask">
+                  <button class="gallery__button copy">
+                    <img src="@img/icons/copy.svg" alt="">
+                  </button>
+                  <div class="gallery__shop-link">
+                    <div class="gallery__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <path d="M1.25468 7.56595C1.13958 6.11201 2.2884 4.86865 3.74689 4.86865H12.2531C13.7116 4.86865 14.8604 6.11201 14.7453 7.56595L14.2203 14.1975C14.1174 15.4977 13.0323 16.5002 11.7281 16.5002H4.27189C2.96769 16.5002 1.88261 15.4977 1.77968 14.1975L1.25468 7.56595Z" stroke="#fff"/>
+                        <path d="M3.99999 9.5C3.99999 9.5 3.78329 1 8.00001 1C12.2167 1 12 9.5 12 9.5" stroke="#fff"/>
+                        </svg>
+                    </div>
+                    <div class="gallery__on-me">
+                      Узнай, что на мне
+                    </div>
+                  </div>
+                  <div class="gallery__liked">
+                    <a href="#" class="gallery__favorite-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="none">
+                        <path d="M7.90002 3.0948C6.69981 -2.52108 -2.59119 1.90389 1.76037 7.60175C6.11193 13.2996 8.40002 15.4908 8.40002 15.4908" stroke="#fff"/>
+                        <path d="M7.89415 3.0948C9.09435 -2.52108 18.7304 1.90389 14.3789 7.60175C10.0273 13.2996 7.70001 15.5 7.70001 15.5" stroke="#fff"/>
+                        <path d="M7.39099 2.70752L8.4043 2.70757L8.38337 3.24079H7.39099V2.70752Z" fill="none"/>
+                      </svg>
+                    </a>
+                    <a href="#" class="gallery__like-value">200</a>
+                  </div>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <a href="" class="gallery__link">
+                  <img src="@img/04.png" alt="">
+                </a>
+                <div class="gallery__blackout-mask">
+                  <button class="gallery__button copy">
+                    <img src="@img/icons/copy.svg" alt="">
+                  </button>
+                  <div class="gallery__shop-link">
+                    <div class="gallery__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <path d="M1.25468 7.56595C1.13958 6.11201 2.2884 4.86865 3.74689 4.86865H12.2531C13.7116 4.86865 14.8604 6.11201 14.7453 7.56595L14.2203 14.1975C14.1174 15.4977 13.0323 16.5002 11.7281 16.5002H4.27189C2.96769 16.5002 1.88261 15.4977 1.77968 14.1975L1.25468 7.56595Z" stroke="#fff"/>
+                        <path d="M3.99999 9.5C3.99999 9.5 3.78329 1 8.00001 1C12.2167 1 12 9.5 12 9.5" stroke="#fff"/>
+                        </svg>
+                    </div>
+                    <div class="gallery__on-me">
+                      Узнай, что на мне
+                    </div>
+                  </div>
+                  <div class="gallery__liked">
+                    <a href="#" class="gallery__favorite-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="none">
+                        <path d="M7.90002 3.0948C6.69981 -2.52108 -2.59119 1.90389 1.76037 7.60175C6.11193 13.2996 8.40002 15.4908 8.40002 15.4908" stroke="#fff"/>
+                        <path d="M7.89415 3.0948C9.09435 -2.52108 18.7304 1.90389 14.3789 7.60175C10.0273 13.2996 7.70001 15.5 7.70001 15.5" stroke="#fff"/>
+                        <path d="M7.39099 2.70752L8.4043 2.70757L8.38337 3.24079H7.39099V2.70752Z" fill="none"/>
+                      </svg>
+                    </a>
+                    <a href="#" class="gallery__like-value">200</a>
+                  </div>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <a href="" class="gallery__link">
+                  <img src="@img/05.png" alt="">
+                </a>
+                <div class="gallery__blackout-mask">
+                  <button class="gallery__button copy">
+                    <img src="@img/icons/copy.svg" alt="">
+                  </button>
+                  <div class="gallery__shop-link">
+                    <div class="gallery__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <path d="M1.25468 7.56595C1.13958 6.11201 2.2884 4.86865 3.74689 4.86865H12.2531C13.7116 4.86865 14.8604 6.11201 14.7453 7.56595L14.2203 14.1975C14.1174 15.4977 13.0323 16.5002 11.7281 16.5002H4.27189C2.96769 16.5002 1.88261 15.4977 1.77968 14.1975L1.25468 7.56595Z" stroke="#fff"/>
+                        <path d="M3.99999 9.5C3.99999 9.5 3.78329 1 8.00001 1C12.2167 1 12 9.5 12 9.5" stroke="#fff"/>
+                        </svg>
+                    </div>
+                    <div class="gallery__on-me">
+                      Узнай, что на мне
+                    </div>
+                  </div>
+                  <div class="gallery__liked">
+                    <a href="#" class="gallery__favorite-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="none">
+                        <path d="M7.90002 3.0948C6.69981 -2.52108 -2.59119 1.90389 1.76037 7.60175C6.11193 13.2996 8.40002 15.4908 8.40002 15.4908" stroke="#fff"/>
+                        <path d="M7.89415 3.0948C9.09435 -2.52108 18.7304 1.90389 14.3789 7.60175C10.0273 13.2996 7.70001 15.5 7.70001 15.5" stroke="#fff"/>
+                        <path d="M7.39099 2.70752L8.4043 2.70757L8.38337 3.24079H7.39099V2.70752Z" fill="none"/>
+                      </svg>
+                    </a>
+                    <a href="#" class="gallery__like-value">200</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+
+	</body>
+</html>

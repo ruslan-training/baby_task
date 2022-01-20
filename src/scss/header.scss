@@ -1,0 +1,153 @@
+//====================================================================================================
+.header {
+	position: fixed;
+    top: 0;
+    width: 100%;
+    height: 44px;
+	background-color: $mainWhite;
+	z-index: 2;
+	transition: all 0.5s ease 0s;
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 100%;
+
+		@media (max-width: 640px) {
+			justify-content: unset;
+		}
+	}
+	&__logo {
+		max-width: rem(67);
+		width: 100%;
+	}
+	&__logo img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	&__user {
+		display: flex;
+		align-items: center;
+		column-gap: rem(35);
+
+		@media (max-width: 640px) {
+			margin: 0px rem(33) 0px auto;
+			column-gap: rem(33);
+		}
+	}
+	&__user .user__item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	&__user .user__item {
+		position: relative;
+		max-width: rem(16);
+		width: 100%;
+		transition: all 0.4s ease 0s;
+
+		@media (max-width: 640px) {
+			max-width: rem(15);
+		}
+	}
+	&__user .user__item .total-counter {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: -2px;
+		right: -7px;
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		background-color: $mainColor;
+		font-size: rem(12);
+		color: $mainWhite;	
+	}
+}
+//===============NAV MENU==========================================================================
+.header__nav {
+	position: fixed;
+	width: 100%;
+	height: 277px;
+	top: -100%;
+	left: 0;
+	overflow: auto;
+	background-color: $mainWhite;
+	padding: rem(80) rem(15) rem(43) rem(30);
+	transition: all 0.8s ease 0s;
+	z-index: 4;
+	
+	.menu-open & {
+		top: 0;
+		transition: all 0.8s ease 0s;
+	}
+
+	@media (max-width: 640px) {
+		display: block;
+	}
+}
+.menu-open .nav__list {
+	display: inline-block;
+}
+.menu-open .nav__item {
+	font-size: rem(12);
+	line-height: rem(16);
+	padding: 0px 0px rem(30) 0px;
+	text-transform: uppercase;
+	transition: all 0.5s ease 0s;
+
+	&:hover {
+		color: lighten($mainColor, $amount: 20);
+		transition: all 0.5s ease 0s;
+	}
+}
+//Burger
+.icon-menu {
+	display: none;
+	@media (max-width: 640px) {
+		display: block;
+		position: relative;
+		width: 18px;
+		height: 12px;
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			background-color: #000;
+		}
+		&::before {
+			top: -1px;
+		}
+		&::after {
+			bottom: 0px;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 0px);
+
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+				
+			}
+		}
+	}
+}
