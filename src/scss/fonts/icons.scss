@@ -14,3 +14,15 @@
 		display: block;
 	}
 }
+
+
+._icon-star2:before {
+	content: "\e902";
+  }
+  ._icon-star1:before {
+	content: "\e901";
+  }
+  ._icon-star:before {
+	content: "\e900";
+  }
+  

@@ -9,7 +9,7 @@ import { path } from "./config/gulp-settings.js";
 global.app = {
 	isBuild: process.argv.includes('--build'),
 	isDev: !process.argv.includes('--build'),
-	isWebP: !process.argv.includes('--nowebp'),
+	// isWebP: !process.argv.includes('--nowebp'),
 	isFontsReW: process.argv.includes('--rewrite'),
 	gulp: gulp,
 	path: path,
@@ -22,7 +22,7 @@ import { html } from "./config/gulp-tasks/html.js";
 import { css } from "./config/gulp-tasks/css.js";
 import { js } from "./config/gulp-tasks/js.js";
 import { jsp } from "./config/gulp-tasks/js-p.js";
-import { images } from "./config/gulp-tasks/images.js";
+// import { images } from "./config/gulp-tasks/images.js";
 import { ftp } from "./config/gulp-tasks/ftp.js";
 import { zip } from "./config/gulp-tasks/zip.js";
 import { sprite } from "./config/gulp-tasks/sprite.js";
@@ -34,13 +34,13 @@ const fonts = gulp.series(reset, otfToTtf, ttfToWoff, fonstStyle);
 // Основные задачи будем выполнять параллельно после обработки шрифтов
 const devTasks = gulp.parallel(fonts, gitignore);
 // Основные задачи будем выполнять параллельно после обработки шрифтов
-const buildTasks = gulp.series(fonts, js, gulp.parallel(html, css, images, gitignore), jsp);
+const buildTasks = gulp.series(fonts, js, gulp.parallel(html, css, gitignore), jsp);
 
 // Экспорт задач
 export { html }
 export { css }
 export { js }
-export { images }
+// export { images }
 export { fonts }
 export { sprite }
 export { ftp }

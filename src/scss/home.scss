@@ -188,9 +188,9 @@ input[type="number"]:focus {
     }
 }
 //=========================STAR RATING===================================================================
-.star-rating {
+.reviews {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     margin: 0px 0px rem(46) 0px;
     @include adaptiveValue("margin-bottom", 46, 20, 1200, 977, 1);
 
@@ -199,23 +199,7 @@ input[type="number"]:focus {
         line-height: rem(16);
         margin: 0px rem(12) 0px 0px;
     }
-    &__stars-box {
-        display: flex;
-        align-items: center;
-        column-gap: rem(1);
-        margin: 0px rem(4) 0px 0px;
-    }
-    &__star {
-        max-width: 12px;
-        height: 12px;
-        width: 100%;
-    }
-    &__star img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    &__reviews {
+    &__quantity {
         font-weight: 400;
         margin: 0px rem(4) 0px 0px;
         transition: all 0.3s ease 0s;
@@ -225,6 +209,9 @@ input[type="number"]:focus {
         }
     }
     &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 20px;
         height: 20px;
         transition: all 0.3s ease 0s;
@@ -234,6 +221,70 @@ input[type="number"]:focus {
             transition: all 0.3s ease 0s;
         }
     }
+}
+.rating {
+    margin: 0px rem(6) 0px 0px;
+    border: none;
+}
+.rating__group {
+    position: relative;
+    width: 60px;
+    height: 12px;
+    background-image: url(@img/icons/star_empty.svg);
+    background-size: 12px;
+    background-repeat: repeat-x;
+}
+.rating__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+.rating__input:focus ~ .rating__focus {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.rating__star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 12px;
+    background-size: 12px 12px;
+    background-repeat: repeat-x;
+}
+.rating__star:hover,
+.rating__input:checked + .rating__star {
+    background-image: url(@img/icons/star_fill.svg);
+}
+.rating__star:hover ~ .rating__star {
+    background-image: url(@img/icons/star_empty.svg);
+}
+
+.rating__star:nth-of-type(1) {
+    z-index: 5;
+    width: 12px;
+}
+.rating__star:nth-of-type(2) {
+    z-index: 4;
+    width: 24px;
+}
+.rating__star:nth-of-type(3) {
+    z-index: 3;
+    width: 36px;
+}
+.rating__star:nth-of-type(4) {
+    z-index: 2;
+    width: 48px;
+}
+.rating__star:nth-of-type(5) {
+    z-index: 1;
+    width: 60px;
 }
 //=========================TO-CART===================================================================
 .to-cart {
@@ -315,7 +366,7 @@ input[type="number"]:focus {
             background-color: lighten($mainColor, 10%);
             transition: all 0.3s ease 0s;
         }
-        &:focus .to-cart__favorite svg {
+        &:visited svg {
             fill: $mainWhite;
         }
     }
@@ -735,7 +786,9 @@ input[type="number"]:focus {
     }
 }
 //=========================POPUP===================================================================
-
+body.lock {
+    overflow: hidden;
+}
 .popup {
     position: fixed;
     width: 100%;
@@ -780,8 +833,13 @@ input[type="number"]:focus {
     transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
     opacity: 1;
 }
-.popup__product-name, .popup__quantity {
-    font-size: rem(32);
+.popup__product-name, .popup__quantity, .popup__add-to-favorite, .mail-error {
+    font-size: rem(18);
+    line-height: rem(30);
+
+    @media (max-width: 767px) {
+        font-size: rem(14);
+    }
 }
 .close-popup {
     position: absolute;

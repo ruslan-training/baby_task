@@ -24,51 +24,34 @@
 						</div>
             <div class="card__wrapper">
               <div class="card__details details">
-                <h4 id="product-name" class="details__title">Пижама для девочек</h4>
+                <h4 class="details__title">Пижама для девочек</h4>
                 <div class="details__vendor-code">Арт. 02765/46</div>
-                <div class="details__star-rating star-rating">
-                  <div class="star-rating__title">Отзывы</div>
-                  <ul class="star-rating__stars-box">
-                    <li class="star-rating__star">
-                      <a href="#" class="star-rating__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                          <path d="M6 8.635L9.09 10.5L8.27 6.985L11 4.62L7.405 4.315L6 1L4.595 4.315L1 4.62L3.73 6.985L2.91 10.5L6 8.635Z" fill="#333333"/>
-                          </svg>
-                      </a>
-                    </li>
-                    <li class="star-rating__star">
-                      <a href="#" class="star-rating__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                          <path d="M6 8.635L9.09 10.5L8.27 6.985L11 4.62L7.405 4.315L6 1L4.595 4.315L1 4.62L3.73 6.985L2.91 10.5L6 8.635Z" fill="#333333"/>
-                          </svg>
-                      </a>
-                    </li>
-                    <li class="star-rating__star">
-                      <a href="#" class="star-rating__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                          <path d="M6 8.635L9.09 10.5L8.27 6.985L11 4.62L7.405 4.315L6 1L4.595 4.315L1 4.62L3.73 6.985L2.91 10.5L6 8.635Z" fill="#333333"/>
-                          </svg>
-                      </a>
-                    </li>
-                    <li class="star-rating__star">
-                      <a href="#" class="star-rating__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                          <path d="M6 8.635L9.09 10.5L8.27 6.985L11 4.62L7.405 4.315L6 1L4.595 4.315L1 4.62L3.73 6.985L2.91 10.5L6 8.635Z" fill="#333333"/>
-                          </svg>
-                      </a>
-                    </li>
-                    <li class="star-rating__star">
-                      <a href="#" class="star-rating__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                          <path d="M6 8.635L9.09 10.5L8.27 6.985L11 4.62L7.405 4.315L6 1L4.595 4.315L1 4.62L3.73 6.985L2.91 10.5L6 8.635Z" fill="#333333"/>
-                          </svg>
-                      </a>
-                    </li>
-                  </ul>
-                  <a href="#" class="star-rating__reviews">
+                <div class="details__reviews reviews">
+                  <div class="reviews__title">Отзывы</div>
+                  <fieldset class="rating">
+                    <div class="rating__group">
+                        <input class="rating__input" type="radio" name="health" id="health-1" value="1" checked>
+                        <label class="rating__star" for="health-1" aria-label="Ужасно"></label>
+            
+                        <input class="rating__input" type="radio" name="health" id="health-2" value="2">
+                        <label class="rating__star" for="health-2" aria-label="Сносно"></label>
+            
+                        <input class="rating__input" type="radio" name="health" id="health-3" value="3">
+                        <label class="rating__star" for="health-3" aria-label="Нормально"></label>
+            
+                        <input class="rating__input" type="radio" name="health" id="health-4" value="4">
+                        <label class="rating__star" for="health-4" aria-label="Хорошо"></label>
+            
+                        <input class="rating__input" type="radio" name="health" id="health-5" value="5">
+                        <label class="rating__star" for="health-5" aria-label="Отлично"></label>
+            
+                        <div class="rating__focus"></div>
+                    </div>
+                  </fieldset>
+                  <a href="#" class="reviews__quantity">
                     14 отзывов
                   </a>
-                  <button type="submit" class="star-rating__button btn-right">
+                  <button type="submit" class="reviews__button btn-right">
                     <img src="@img/icons/arrow_right.svg" alt="">
                   </button>
                 </div>
@@ -305,12 +288,7 @@
       <div class="popup__body">
         <div class="popup__content">
           <button type="button" class="close-popup"></button>
-          <div class="popup__product-name">
-            Наименование товара:
-          </div>
-          <div class="popup__quantity">
-            0
-          </div>
+          <div id="product-name" class="popup__addAlert"></div>
         </div>
       </div>
     </div>
@@ -318,10 +296,7 @@
       <div class="popup__body">
         <div class="popup__content">
           <button type="button" class="close-popup"></button>
-          <span class="popup__product-name">
-            Наименование товара
-          </span>
-          <span class="popup__add-to-favorite">добавлен(а) в избранное.</span>
+          <div class="popup__favoriteAlert"></div>
         </div>
       </div>
     </div>

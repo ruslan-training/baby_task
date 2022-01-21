@@ -51,9 +51,10 @@ const current = document.querySelector('#current'),
 //===========================CLEAR BTN=====================================================================================================================================================================================================================================================================================
 	const footerInput = document.querySelector('.footer-nav__input'),
 		footerBtn = document.querySelector('.footer-nav__input-button'),
-		footerPopup = document.querySelector('.footer-nav__form-box .popup-link')
+		footerPopup = document.querySelector('.footer-nav__button'),
+		popupErr = document.querySelector('.popup-err')
 		
-	footerInput.addEventListener('click', ()=> {
+		footerInput.addEventListener('click', ()=> {
 		footerBtn.classList.add('_active')
 
 		window.onclick = (e)=> {
@@ -66,9 +67,13 @@ const current = document.querySelector('#current'),
 	})
 	footerInput.addEventListener('blur', e => {
 		const hasValid = ~e.target.value.indexOf('@') !== 0
-		console.log(hasValid);
 		!hasValid ? footerInput.classList.add('_error') : footerInput.classList.remove('_error')
-		!hasValid ? footerPopup.classList.add('_error') : footerInput.classList.remove('_error')
+		if(footerInput.classList.contains('_error')) {
+			popupErr.classList.add('_error')
+		} else {
+			popupErr.classList.remove('_error')
+		}
+
 	})
 	//===========================HEADER=MOVED====================================================================================================================================================================================================================================================================================
 	
@@ -90,9 +95,8 @@ const current = document.querySelector('#current'),
 		  incrementBtn = document.querySelector('.increment'),
 		  decrementBtn = document.querySelector('.decrement'),
 		  addToCartBtn = document.querySelector('.to-cart__add'),
-		  productName = document.querySelector('.details__title');
-
-		  productsQuantity.value = 0
+		  addToFavorite = document.querySelector('.to-cart__favorite')
+		
 
 			incrementBtn.addEventListener('click', function increment(){
 				productsQuantity.value++
@@ -106,10 +110,31 @@ const current = document.querySelector('#current'),
 				}
 			})
 			addToCartBtn.addEventListener('click', function addToCart(){
-				totalCount.textContent = productsQuantity.value
-                productsQuantity.value = 0
-				
-				
+				const cartIcon = document.querySelector('.cartIcon'),
+					  cartQuantity = cartIcon.querySelector('span'),
+					  productName = document.querySelector('.details__title'),
+					  popupTextAlertAdd = document.querySelector('.popup__addAlert'),
+					  popupQuantity = document.querySelector('.popup__quantity')
+
+				if(productName) {
+					popupTextAlertAdd.textContent = (`Товар ${productName.textContent} в количестве ${productsQuantity.value}шт, добавлен в корзину`)
+				}
+					  
+				if(cartQuantity) {
+					cartQuantity.innerHTML = productsQuantity.value
+					
+				} else if (productsQuantity.value > 0) {
+					cartIcon.insertAdjacentHTML('beforeend', `<span>${productsQuantity.value}</span>`)
+				}
+			})
+
+			addToFavorite.addEventListener('click', function addToFavorite(){
+				const popupTextAlerFav = document.querySelector('.popup__favoriteAlert'),
+					  productName = document.querySelector('.details__title'),
+					  favIcon = document.querySelector('.to-cart__favorite svg')
+
+				popupTextAlerFav.textContent = (`Товар ${productName.textContent}, добавлен в избранное`)
+				favIcon.style.fill = '#fff'
 			})
 //=============================================POPUP===============================================================================================================================================================================================================================================
 	const popupLinks = document.querySelectorAll('.popup-link');
@@ -141,16 +166,27 @@ const current = document.querySelector('#current'),
 			});
 		}
 	}
-
 	function popupOpen(curentPopup) {
 		if (curentPopup && unlock) {
 			const popupActive = document.querySelector('.popup.open');
+			console.log(curentPopup)
 			if (popupActive) {
 				popupClose(popupActive, false);
 			} else {
 				bodyLock();
 			}
-			curentPopup.classList.add('open');
+			if(curentPopup.classList.contains('_error')) {
+				curentPopup.classList.add('open');
+			} else {
+				curentPopup.style.displa = 'none';
+			}
+
+			if(!curentPopup.classList.contains('_error')) {
+				curentPopup.classList.add('open');
+			} else {
+				return
+			}
+			
 			curentPopup.addEventListener("click", function (e) {
 				if (!e.target.closest('.popup__content')) {
 					popupClose(e.target.closest('.popup'));
