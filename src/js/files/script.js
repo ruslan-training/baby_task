@@ -52,7 +52,7 @@ const current = document.querySelector('#current'),
 	const footerInput = document.querySelector('.footer-nav__input'),
 		footerBtn = document.querySelector('.footer-nav__input-button'),
 		footerPopup = document.querySelector('.footer-nav__button'),
-		popupErr = document.querySelector('.popup-err')
+		popupErr = document.querySelector('.footer-nav__error');
 		
 		footerInput.addEventListener('click', ()=> {
 		footerBtn.classList.add('_active')
@@ -69,9 +69,7 @@ const current = document.querySelector('#current'),
 		const hasValid = ~e.target.value.indexOf('@') !== 0
 		!hasValid ? footerInput.classList.add('_error') : footerInput.classList.remove('_error')
 		if(footerInput.classList.contains('_error')) {
-			popupErr.classList.add('_error')
-		} else {
-			popupErr.classList.remove('_error')
+			popupErr.textContent = (`Вы ввели не верный адрес электронной почты`)
 		}
 
 	})
@@ -175,18 +173,7 @@ const current = document.querySelector('#current'),
 			} else {
 				bodyLock();
 			}
-			if(curentPopup.classList.contains('_error')) {
-				curentPopup.classList.add('open');
-			} else {
-				curentPopup.style.displa = 'none';
-			}
-
-			if(!curentPopup.classList.contains('_error')) {
-				curentPopup.classList.add('open');
-			} else {
-				return
-			}
-			
+			curentPopup.classList.add('open');
 			curentPopup.addEventListener("click", function (e) {
 				if (!e.target.closest('.popup__content')) {
 					popupClose(e.target.closest('.popup'));

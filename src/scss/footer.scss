@@ -75,17 +75,18 @@
     }
     &__input-wrapper {
         position: relative;
-    }
-    &__form {
         position: relative;
         max-width: 450px;
         height: 44px;
         width: 100%;
-        margin: 0px 0px rem(35) 0px;
+        margin: 0px 0px rem(10) 0px;
 
         @media (max-width: 767px) {
             max-width: 100%;
         }
+    }
+    &__form {
+       position: relative;
     }
     &__input {
         position: absolute;
@@ -103,6 +104,12 @@
         &._error {
             border-bottom: 1px solid red;
         }
+    }
+    &__error {
+        font-size: rem(14);
+        line-height: math.div(20 ,14);
+        color: red;
+        margin: 0px 0px rem(25) 0px;
     }
     &__input-button {
         position: absolute;
