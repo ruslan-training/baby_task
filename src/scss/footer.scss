@@ -106,10 +106,15 @@
         }
     }
     &__error {
+        display: block;
         font-size: rem(14);
         line-height: math.div(20 ,14);
         color: red;
         margin: 0px 0px rem(25) 0px;
+
+        @media (max-width:640px) {
+            font-size: rem(12);
+        }
     }
     &__input-button {
         position: absolute;
